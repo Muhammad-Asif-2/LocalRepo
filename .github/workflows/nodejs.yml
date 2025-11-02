@@ -11,14 +11,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Checkout code
       - uses: actions/checkout@v3
 
+      # 2️⃣ Setup Node.js
       - uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: Install dependencies
-        run: npm install
+      # 3️⃣ Install dependencies
+      - run: npm install
 
-      - name: Run Jest tests
-        run: npx jest
+      # 4️⃣ Make Jest binary executable (fix permission issue)
+      - run: chmod +x ./node_modules/.bin/jest
+
+      # 5️⃣ Run Jest tests
+      - run: npm test

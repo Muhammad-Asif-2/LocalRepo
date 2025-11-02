@@ -5,7 +5,7 @@
   "type": "module",
   "main": "sum.js",
   "scripts": {
-    "test": "jest"
+    "test": "npx jest"
   },
   "keywords": [],
   "author": "",
